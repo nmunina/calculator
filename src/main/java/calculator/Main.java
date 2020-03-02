@@ -9,34 +9,32 @@ public class Main {
     public static ArrayList<Double> input = new ArrayList<Double>();
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public static double memory;
+    public static String usersMenuChoice;
 
     public static void main(String[] args) throws IOException {
-	// write your code here
+
         System.out.println("Välkommen till miniräknare.");
         selectOperation();
     }
 
     private static void selectOperation() throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        String inputOperation;
         do {
             showMenu();
-            inputOperation = reader.readLine();
-            if (inputOperation.equals("1")) {
+            usersMenuChoice = reader.readLine();
+            if (usersMenuChoice.equals("1")) {
                 add(readInput());
-            } else if (inputOperation.equals("2")) {
+            } else if (usersMenuChoice.equals("2")) {
                 subtract(readInput());
-            } else if (inputOperation.equals("3")) {
+            } else if (usersMenuChoice.equals("3")) {
                 multiply(readInput());
-            } else if (inputOperation.equals("4")) {
+            } else if (usersMenuChoice.equals("4")) {
                 divide(readInput());
-            } else if (!inputOperation.equals("5")){
+            } else if (!usersMenuChoice.equals("5")){
                 System.out.println("Inget giltigt val försök igen!");
             }
 
-        } while (!inputOperation.equals("5"));
+        } while (!usersMenuChoice.equals("5"));
 
         System.out.println("Tack och hej!");
         reader.close();
@@ -49,7 +47,7 @@ public class Main {
         System.out.println("3: Multiplicera");
         System.out.println("4: Dividera");
         System.out.println("5: Avsluta");
-        System.out.println("");
+        System.out.println();
         System.out.println("Ange ditt val:");
     }
 
@@ -72,7 +70,7 @@ public class Main {
         }
 
         System.out.println("Result = " + result);
-        System.out.println("");
+        System.out.println();
         memory = result;
         input.clear();
     }
@@ -84,7 +82,7 @@ public class Main {
         }
 
         System.out.println("Result = " + result);
-        System.out.println("");
+        System.out.println();
         memory = result;
         input.clear();
     }
@@ -96,7 +94,7 @@ public class Main {
         }
 
         System.out.println("Result = " + result);
-        System.out.println("");
+        System.out.println();
         memory = result;
         input.clear();
     }
@@ -108,7 +106,7 @@ public class Main {
         }
 
         System.out.println("Result = " + result);
-        System.out.println("");
+        System.out.println();
         memory = result;
         input.clear();
     }
