@@ -1,3 +1,5 @@
+//Uppgift av Natalia Munina. MVT 19-20
+
 package calculator;
 
 import java.io.BufferedReader;
@@ -5,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Main {
+public class Calculator {
     public static ArrayList<Double> input;
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public static double memory;
