@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Main {
-    public static ArrayList<Double> input = new ArrayList<Double>();
+    public static ArrayList<Double> input;
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     public static double memory;
     public static String usersMenuChoice;
@@ -32,10 +32,18 @@ public class Main {
                 divide(readInput());
             } else if (!usersMenuChoice.equals("5")){
                 System.out.println("Inget giltigt val försök igen!");
+                System.out.println();
+                continue;
+            }
+
+            if (!usersMenuChoice.equals("5")) {
+            System.out.println("Result = " + memory);
+            System.out.println();
             }
 
         } while (!usersMenuChoice.equals("5"));
 
+        System.out.println();
         System.out.println("Tack och hej!");
         reader.close();
     }
@@ -52,6 +60,7 @@ public class Main {
     }
 
     private static ArrayList<Double> readInput() throws IOException {
+        input = new ArrayList<Double>();
         System.out.println("Hur många tal vill du räkna?");
         int numberOfVariables = Integer.parseInt(reader.readLine());
 
@@ -62,17 +71,21 @@ public class Main {
 
         return input;
     }
+// Lambda attempt
+//    public static void addL(ArrayList<Double> input, lambda) {
+//        double result = input.get(0);
+//        for (int i = 0; i < (input.size() - 1); i++)  {
+//            result = result + input.get(i+1);
+//        }
+//        memory = result;
+//    }
 
     public static void add(ArrayList<Double> input) {
         double result = input.get(0);
         for (int i = 0; i < (input.size() - 1); i++)  {
             result += input.get(i+1);
         }
-
-        System.out.println("Result = " + result);
-        System.out.println();
-        memory = result;
-        input.clear();
+          memory = result;
     }
 
     public static void subtract(ArrayList<Double> input) {
@@ -80,11 +93,7 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result - input.get(i+1);
         }
-
-        System.out.println("Result = " + result);
-        System.out.println();
         memory = result;
-        input.clear();
     }
 
     public static void multiply(ArrayList<Double> input) {
@@ -92,11 +101,7 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result * input.get(i+1);
         }
-
-        System.out.println("Result = " + result);
-        System.out.println();
         memory = result;
-        input.clear();
     }
 
     public static void divide(ArrayList<Double> input) {
@@ -104,10 +109,6 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result / input.get(i+1);
         }
-
-        System.out.println("Result = " + result);
-        System.out.println();
         memory = result;
-        input.clear();
     }
 }
