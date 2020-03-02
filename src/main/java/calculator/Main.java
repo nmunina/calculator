@@ -12,13 +12,12 @@ public class Main {
     public static String usersMenuChoice;
 
     public static void main(String[] args) throws IOException {
-
         System.out.println("Välkommen till miniräknare.");
         selectOperation();
+        reader.close();
     }
 
     private static void selectOperation() throws IOException {
-
         do {
             showMenu();
             usersMenuChoice = reader.readLine();
@@ -45,7 +44,6 @@ public class Main {
 
         System.out.println();
         System.out.println("Tack och hej!");
-        reader.close();
     }
 
     private static void showMenu() {
@@ -71,21 +69,14 @@ public class Main {
 
         return input;
     }
-// Lambda attempt
-//    public static void addL(ArrayList<Double> input, lambda) {
-//        double result = input.get(0);
-//        for (int i = 0; i < (input.size() - 1); i++)  {
-//            result = result + input.get(i+1);
-//        }
-//        memory = result;
-//    }
 
     public static void add(ArrayList<Double> input) {
         double result = input.get(0);
         for (int i = 0; i < (input.size() - 1); i++)  {
             result += input.get(i+1);
         }
-          memory = result;
+
+        memory = result;
     }
 
     public static void subtract(ArrayList<Double> input) {
@@ -93,6 +84,7 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result - input.get(i+1);
         }
+
         memory = result;
     }
 
@@ -101,6 +93,7 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result * input.get(i+1);
         }
+
         memory = result;
     }
 
@@ -109,6 +102,7 @@ public class Main {
         for (int i = 0; i < (input.size() - 1); i++) {
             result = result / input.get(i+1);
         }
+
         memory = result;
     }
 }

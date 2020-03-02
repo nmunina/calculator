@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public class MainTest {
     private ArrayList<Double> testInput;
 
-    @Before public void init() {
+    @Before
+    public void init() {
         Main.memory = 0;
         testInput = new ArrayList<Double>();
     }
