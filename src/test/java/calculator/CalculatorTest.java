@@ -24,7 +24,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void substractTest(){
+    public void subtractTest(){
         testInput.add(10.0);
         testInput.add(3.0);
 
